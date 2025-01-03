@@ -10,7 +10,7 @@ This project involves extracting, cleaning, and analyzing data from a Telegram c
 - `data extraction.py`: Script to extract data from the Telegram channel. (not included for privacy reasons)
 - `dendrogram`: Directory for dendrogram-related files.
 - `main.ipynb`: Jupyter notebook for data analysis.
-- `session_name.session`: Session file for the Telegram client.
+
 
 ## Setup
 
