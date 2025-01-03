@@ -1,4 +1,3 @@
-# My-Telegram-Channel
 # Telegram Channel Data Analysis
 
 This project involves extracting, cleaning, and analyzing data from a Telegram channel. The analysis includes clustering posts by topics, visualizing engagement metrics, and generating insights from the extracted data.
