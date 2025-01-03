@@ -52,6 +52,8 @@ Load the extracted data from `channel_data.csv` into a pandas DataFrame.
 
 Perform various analyses on the data, including:
 
-- **Sentiment Analysis**
+
 - **Trend Analysis**
 - **User Engagement Analysis**
+- **Clustering**
+- **BERTopic**
