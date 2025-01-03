@@ -1,90 +1,58 @@
 # My-Telegram-Channel
+# Telegram Channel Data Analysis
 
-## Project Overview
-This project aims to analyze engagement metrics (comments and reactions) across different content topics. Using clustering and BERTopic modeling, we categorized posts into meaningful topics and visualized their engagement performance to derive actionable insights.
+This project involves extracting, cleaning, and analyzing data from a Telegram channel. The analysis includes clustering posts by topics, visualizing engagement metrics, and generating insights from the extracted data.
 
-## Table of Contents
-- [Project Overview](#project-overview)
-- [Data Preprocessing](#data-preprocessing)
-- [Topic Modeling](#topic-modeling)
-- [Engagement Analysis](#engagement-analysis)
-- [Visualizations](#visualizations)
-- [Insights](#insights)
-- [Setup and Usage](#setup-and-usage)
+## Files and Directories
 
-## Data Preprocessing
-1. **Data Cleaning:**
-   - Removed missing or irrelevant data points.
-   - Processed text data to extract meaningful phrases.
-2. **Feature Extraction:**
-   - Tokenized posts to generate noun-based features.
-   - Used TF-IDF for vectorization.
+- `channel_data_clean.csv`: Cleaned data from the Telegram channel.
+- `channel_data.csv`: Raw data extracted from the Telegram channel.
+- `channel_messages.csv`: Additional message data.
+- `data extraction.py`: Script to extract data from the Telegram channel. (not included for privacy reasons)
+- `dendrogram`: Directory for dendrogram-related files.
+- `main.ipynb`: Jupyter notebook for data analysis.
+- `session_name.session`: Session file for the Telegram client.
 
-## Topic Modeling
-- Applied **BERTopic** for unsupervised topic modeling.
-- Identified three primary topics:
-  1. **Food and Recipes**
-  2. **Lifestyle**
-  3. **Sport and Fitness**
+## Setup
 
-## Engagement Analysis
-- Engagement metrics include:
-  - **Total Reactions:** Sum of all reactions to a post.
-  - **Comments:** Number of comments on a post.
-- Metrics were averaged across the identified topics.
+### Install the Required Libraries
 
-## Visualizations
-- **Hierarchical Clustering Dendrogram:** Displayed topic similarity based on embeddings.
-- **Engagement Bar Chart:** Compared average engagement metrics across topics.
+```bash
+pip install -r requirements.txt
+```
 
-## Insights
-1. **Sport and Fitness** posts receive the highest total reactions, indicating strong audience resonance.
-2. **Lifestyle** posts generate more comments, fostering discussion and interaction.
-3. **Food and Recipes** posts attract moderate reactions but could be improved by encouraging more active participation.
+### Usage
 
-## Setup and Usage
-### Prerequisites
-- Python 3.8+
-- Required Libraries:
-  - `pandas`
-  - `matplotlib`
-  - `bertopic`
-  - `scikit-learn`
+1. Replace the following credentials in `data extraction.py` with your own:
 
-### Installation
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   ```
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-### Running the Project
-1. Preprocess the dataset and generate topics:
    ```python
-   python preprocess_data.py
-   ```
-2. Perform engagement analysis:
-   ```python
-   python analyze_engagement.py
-   ```
-3. Visualize results:
-   ```python
-   python visualize_results.py
+   api_id = 'your_api_id'
+   api_hash = 'your_api_hash'
+   channel_username = 'your_channel_username'
    ```
 
-## Contributions
-Feel free to contribute by submitting issues or pull requests to enhance the analysis.
+2. Run the `data extraction.py` script to extract data from the Telegram channel.
 
-## License
-This project is licensed under the MIT License. See the LICENSE file for more details.
+3. Use `main.ipynb` for data analysis and visualization. This notebook contains the code for cleaning, transforming, and visualizing the extracted data.
 
-channel_data_clean.csv: Cleaned data from the Telegram channel.
-channel_data.csv: Raw data extracted from the Telegram channel.
-channel_messages.csv: Additional message data.
-data extraction.py: Script to extract data from the Telegram channel.
-dendrogram: Directory for dendrogram-related files.
-fasttext_wheel-0.9.2-cp312-cp312-win_amd64.whl: FastText library wheel file.
-main.ipynb: Jupyter notebook for data analysis.
+## Analysis Steps
+
+### Import Libraries
+
+Import necessary libraries such as pandas, numpy, matplotlib, and seaborn.
+
+### Load Data
+
+Load the extracted data from `channel_data.csv` into a pandas DataFrame.
+
+### Data Preprocessing
+
+- Aggregating certain rows, since each post update is recorded as a separate row.
+
+### Analysis
+
+Perform various analyses on the data, including:
+
+- **Sentiment Analysis**
+- **Trend Analysis**
+- **User Engagement Analysis**
